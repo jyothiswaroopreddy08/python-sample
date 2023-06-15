@@ -42,7 +42,7 @@ jobs:
           password: ${{ inputs.password }}
 
       - name: Push Docker image to Dockerhub
-        run: docker push jyothiswaroopreddy08/python-sample:latest
+        run: docker push python-sample:latest
 
         
          
