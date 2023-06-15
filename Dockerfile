@@ -3,6 +3,6 @@ RUN mkdir -p /app
 WORKDIR /app
 RUN pip install --no-cache-dir Flask
 COPY . .
+RUN cd /src
 EXPOSE 5000
-ENV FLASK_APP=script.py
-CMD ["flask", "run", "--host=0.0.0.0"]
+CMD ["python", "./script.py"]
