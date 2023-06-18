@@ -8,12 +8,14 @@ jobs:
   ci:
     name: CI
     runs-on: ubuntu-latest
+    
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: CI workflow
-        uses: ./.github/workflows/CI
+        uses: ./.github/workflows/CI/CIPython.yml
+        
 
   cd:
     name: CD
@@ -24,4 +26,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: CD workflow
-        uses: ./.github/workflows/CD
+        uses: ./.github/workflows/CD/CDPython.yml
