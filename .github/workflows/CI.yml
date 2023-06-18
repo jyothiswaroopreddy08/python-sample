@@ -18,7 +18,7 @@ jobs:
           python-version: 3.8
 
       - name: Install dependencies
-        run: pip install Flask
+        run: pip install Flask, pytest
 
       - name: Run tests
         run: python -m pytest
