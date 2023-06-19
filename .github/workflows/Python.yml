@@ -1,7 +1,7 @@
 name: Python Workflow
 
 on:
-  workflow_call:
+#   workflow_call:
   workflow_dispatch:
 
 jobs:
@@ -12,4 +12,10 @@ jobs:
   cd:
     name: CD
     needs: ci
-    uses: ./.github/workflows/CD.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: CD 
+        uses: ./.github/workflows/CD.yml
+        with:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
