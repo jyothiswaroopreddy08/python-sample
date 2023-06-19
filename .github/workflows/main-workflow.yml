@@ -3,22 +3,6 @@ name: Main Workflow
 on:
   workflow_call:
   workflow_dispatch: 
-#     inputs:
-#       username:
-#          description: "Username"
-#          type: string
-#          required: true
-#          default: "jyothiswaroopreddy08"
-#       password:
-#          description: "Password"
-#          type: string
-#          required: true
-#          default: "ammusiri99@S"
-#       region:
-#          description: "region"
-#          type: string
-#          required: true
-#          default: "us-east-1"
 
 jobs:
   build:
@@ -63,10 +47,10 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
         run: |
          aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 157352102889.dkr.ecr.us-east-1.amazonaws.com
-         docker tag my-app:latest 157352102889.dkr.ecr.us-east-1.amazonaws.com/sample-pyapp/python:latest
+         docker tag my-app:latest 157352102889.dkr.ecr.us-east-1.amazonaws.com/sample-pyapp:latest
 
       - name: Push Docker image to ECR
-        run: docker push 157352102889.dkr.ecr.us-east-1.amazonaws.com/sample-pyapp/python:latest
+        run: docker push 157352102889.dkr.ecr.us-east-1.amazonaws.com/sample-pyapp:latest
           
     
   
