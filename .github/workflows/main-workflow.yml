@@ -6,23 +6,11 @@ on:
 jobs:
   ci:
     name: CI
-    runs-on: ubuntu-latest
-    steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-        
-      - name: Run CI Workflow
-        uses: ./.github/workflows/CI.yml
+    uses: ./.github/workflows/CI.yml
         
   cd:
     name: CD
     needs: ci
-    runs-on: ubuntu-latest
-    steps:
-#       - name: Checkout code
-#         uses: actions/checkout@v2
-      
-      - name: Run CD Workflow
-        uses: ./.github/workflows/CD.yml
+    uses: ./.github/workflows/CD.yml
     
   
