@@ -10,7 +10,7 @@ jobs:
     uses: ./.github/workflows/CI.yml
         
   cd:
-    name: CD
+#     name: CD
     needs: ci
     runs-on: ubuntu-latest
     steps:
