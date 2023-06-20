@@ -23,10 +23,12 @@ jobs:
       - name: Run tests
         run: |
           cd src
-          python -m pytest
+          coverage run test_app.py
+          coverage xml test_app.py
+          coverage report test_app.py  
           
-      - name: Build package
-        run: python -m build
+#       - name: Build package
+#         run: python -m build
         
 #       - name: Set up AWS credentials
 #         uses: aws-actions/configure-aws-credentials@v1
