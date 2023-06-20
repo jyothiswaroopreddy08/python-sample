@@ -1,8 +1,10 @@
-# test_app.py
+import unittest
+from app import add_numbers
 
-def test_hello():
-    assert 2 + 2 == 4
-
-def test_greeting():
-    name = "Alice"
-    assert f"Hello, {name}!" == "Hello, Alice!"
+class TestApp(unittest.TestCase):
+    def test_add_numbers(self):
+        result = add_numbers(2, 3)
+        self.assertEquals(result, 5)
+        
+if __name__ == '__main__':
+    unittest.main()
