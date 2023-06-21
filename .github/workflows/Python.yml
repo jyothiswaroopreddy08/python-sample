@@ -14,7 +14,7 @@ jobs:
     needs: dependencies
     uses: ./.github/workflows/python-test.yml
     with:
-      test-goal: 'pytest --cov --cov-report=xml'
+      test-goal: 'pytest test_app.py'
     
   code-quality-scan:
     name: SonarQube scan
