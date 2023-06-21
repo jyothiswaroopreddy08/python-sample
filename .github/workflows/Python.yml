@@ -5,11 +5,16 @@ on:
   workflow_dispatch:
 
 jobs:
-  ci:
-    name: CI
+  dependencies:
+    name: Install Dependencies
     uses: ./.github/workflows/CI.yml
         
-  cd:
-    name: CD
-    needs: ci
-    uses: ./.github/workflows/CD.yml
+  test:
+    name: Run Tests
+    needs: dependencies
+    uses: ./.github/workflows/python-test.yml
+    
+  code-quality-scan:
+    name: SonarQube scan
+    needs: test
+    uses: ./.github/workflows/sonar-scan.yml
