@@ -13,6 +13,8 @@ jobs:
     name: Run Tests
     needs: dependencies
     uses: ./.github/workflows/python-test.yml
+    with:
+      test-goal: 'coverage run test_app.py'
     
   code-quality-scan:
     name: SonarQube scan
