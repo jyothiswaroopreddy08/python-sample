@@ -34,4 +34,4 @@ jobs:
           python-version: 3.8
           
       - name: Run Test
-        run: python ${{inputs.test-goal}}
+        run: ${{inputs.test-goal}}
