@@ -17,7 +17,8 @@ jobs:
       - uses: trstringer/manual-approval@v1
         with:
           secret: ${{ github.TOKEN }}
-          approvers: jyothiswaroopreddy08, ranvivekjan
+          approvers: jyothiswaroopreddy08 
+#           ranvivekjan
           
       - name: Deploy to production
         run: echo deploying
