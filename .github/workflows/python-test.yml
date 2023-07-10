@@ -24,7 +24,7 @@ jobs:
       - name: Run Python script
         run: |
             cd src
-            make build
+            make build -f Makefile
         
       - name: Run Test
         run: |
