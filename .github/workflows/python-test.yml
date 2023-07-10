@@ -1,28 +1,12 @@
 name: Python Test
 
 on:
-  workflow_call:
-    inputs:
-      runs_on:
-        required: false
-        type: string
-        default: "ubuntu-latest"
-      working_directory:
-        required: false
-        type: string
-        default: "."
-      test-goal:
-        required: false
-        type: string
-        default: ""
+  workflow_dispatch:
 
 jobs:
   test:
-    defaults:
-      run:
-        working-directory: ${{inputs.working_directory}}
 
-    runs-on: ${{inputs.runs_on}}
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
@@ -39,4 +23,4 @@ jobs:
       - name: Run Test
         run: |
           cd src
-          ${{inputs.test-goal}}
+          pytest test_app.py
