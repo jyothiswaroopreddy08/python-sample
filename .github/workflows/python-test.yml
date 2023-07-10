@@ -23,10 +23,8 @@ jobs:
           
       - name: Run Python script
         run: |
-            cd src
             make build
         
       - name: Run Test
         run: |
-            cd src
             make test
