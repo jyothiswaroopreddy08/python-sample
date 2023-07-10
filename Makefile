@@ -3,7 +3,7 @@ install:
 	pip install pytest
 
 run:
-	python app.py
+	sh 'python app.py'
 
 test:
 	python -m pytest test_app.py
