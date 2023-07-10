@@ -31,4 +31,4 @@ jobs:
         run: |
           cd src
           #pytest test_app.py
-          make pytest
+          make test
