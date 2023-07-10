@@ -23,12 +23,10 @@ jobs:
           
       - name: Run Python script
         run: |
-          cd src
-          #python app.py
-          make run
+            cd src
+            make run
         
       - name: Run Test
         run: |
-          cd src
-          #pytest test_app.py
-          make test
+            cd src
+            make test
