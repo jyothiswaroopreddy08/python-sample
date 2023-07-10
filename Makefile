@@ -1,4 +1,6 @@
+install:
+        pip install --upgrade pip &&\
+                pip install pytest
 
-
-run: python app.py
-pytest: pytest test_app.py 
+pytest:
+        python pytest test_app.py
