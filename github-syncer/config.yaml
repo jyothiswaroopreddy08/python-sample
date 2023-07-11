@@ -1,0 +1,3 @@
+buildType: ciPySls
+deployType: deployServerless
+envMapping: release
